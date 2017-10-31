@@ -5,11 +5,12 @@ import java.util.Date;
 public class SingleMember extends CommunityMember {
     private int studyYears;
 
-    public SingleMember(int id, Gender gender, String name, Date birthday, int toraHoursInWeek,
-                        int businessHoursInWeek, int income, int gmachUsable,
-                        Volunteering volunteering, int volunteeringHours, int studyYears)
+    public SingleMember(int id, Gender gender, String name, String birthday,
+                        int toraHoursInWeek, int businessHoursInWeek,
+                        int income, int gmachUsage, Volunteering volunteering,
+                        int volunteeringHours, int studyYears)
     {
-        super(id, gender, name, birthday, toraHoursInWeek, businessHoursInWeek, income, gmachUsable, volunteering,volunteeringHours);
+        super(id, gender, name, birthday, toraHoursInWeek, businessHoursInWeek, income, gmachUsage, volunteering,volunteeringHours);
         this.studyYears=studyYears;
 
     }

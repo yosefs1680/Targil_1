@@ -6,7 +6,7 @@ public abstract class CommunityMember implements DebtsAndRights {
     private int id;
     private Gender gender;
     private String name;
-    private Date birthday;
+    private String birthday;
     private int toraHoursInWeek;
     private int businessHoursInWeek;
     private int income;
@@ -15,7 +15,7 @@ public abstract class CommunityMember implements DebtsAndRights {
     private int volunteeringHours;
 
     //c-tor
-    public CommunityMember(int id, Gender gender, String name, Date birthday, int toraHoursInWeek,
+    public CommunityMember(int id, Gender gender, String name, String birthday, int toraHoursInWeek,
                            int businessHoursInWeek, int income, int gmachUsed, Volunteering volunteering,
                            int volunteeringHours) {
         try {
@@ -29,7 +29,7 @@ public abstract class CommunityMember implements DebtsAndRights {
         this.id = id;
         this.gender = gender;
         this.name = name;
-        this.birthday = new Date(String.valueOf(birthday));
+        this.birthday = birthday;
         this.toraHoursInWeek = toraHoursInWeek;
         this.businessHoursInWeek = businessHoursInWeek;
         this.income = income;
@@ -71,11 +71,11 @@ public abstract class CommunityMember implements DebtsAndRights {
         this.name = name;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
-    public void setBirthday(Date birthday) {
-        this.birthday = new Date(String.valueOf(birthday));
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public int getToraHoursInWeek() {
@@ -107,7 +107,7 @@ public abstract class CommunityMember implements DebtsAndRights {
     }
 
 
-    public TaxLevel taxCase(){
+    private TaxLevel taxCase(){
         if (this.income <= 5280)
             return TaxLevel.FIRST;
         if (this.income <9010 )
@@ -168,22 +168,23 @@ public abstract class CommunityMember implements DebtsAndRights {
 
     @Override
     public int recommendedVolunteerHours() {
-        if (this.birthday.getYear()<1960)return 0;
-        int recoValunteer= 0;
-        recoValunteer+= (24*7 - toraHoursInWeek - businessHoursInWeek)*0.2;
+        int check =Integer.parseInt(birthday.substring(6,10));
+        if (check<1960)
+            return 0;
+        int recoValunteer =(int) ((24*7 - toraHoursInWeek - businessHoursInWeek)*0.4);
         if (gender == Gender.FEMALE)
             recoValunteer/=2;
         switch (volunteering){
             case SPIRITUAL: {
-                recoValunteer *= (1/2);
+                recoValunteer *= (1.0/2);
                 break;
             }
             case MUSICAL:{
-                recoValunteer *= (1/3);
+                recoValunteer *= (1.0/3);
                 break;
             }
             case PHYSICAL:{
-                recoValunteer *= (1/4);
+                recoValunteer *= (1.0/4);
                 break;
             }
         }

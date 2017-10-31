@@ -6,7 +6,7 @@ public class MarriedMember extends CommunityMember{
     private int partnerId;
     private int numOfKids;
 
-    public MarriedMember(int id, Gender gender, String name, Date birthday, int toraHoursInWeek,
+    public MarriedMember(int id, Gender gender, String name, String birthday, int toraHoursInWeek,
                          int businessHoursInWeek, int income, int gmachUsable, Volunteering volunteering,
                          int volunteeringHours, int partnerId, int numOfKids) {
         super(id, gender, name, birthday, toraHoursInWeek, businessHoursInWeek, income, gmachUsable, volunteering,volunteeringHours);
