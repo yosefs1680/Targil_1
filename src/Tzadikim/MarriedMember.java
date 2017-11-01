@@ -2,7 +2,7 @@ package Tzadikim;
 
 import java.util.Date;
 
-public class MarriedMember extends CommunityMember{
+public class MarriedMember extends CommunityMember{ // class to create married member on cummonity
     private int partnerId;
     private int numOfKids;
 

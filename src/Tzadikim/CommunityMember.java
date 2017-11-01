@@ -1,8 +1,8 @@
 package Tzadikim;
 
 import java.util.Date;
-
-public abstract class CommunityMember implements DebtsAndRights {
+public abstract class CommunityMember implements DebtsAndRights { // and abstract class to to hold all the details that is
+//    available on single and married member.
     private int id;
     private Gender gender;
     private String name;

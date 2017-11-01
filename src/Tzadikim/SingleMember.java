@@ -2,7 +2,7 @@ package Tzadikim;
 
 import java.util.Date;
 
-public class SingleMember extends CommunityMember {
+public class SingleMember extends CommunityMember {// class to create single member on cummonity
     private int studyYears;
 
     public SingleMember(int id, Gender gender, String name, String birthday,

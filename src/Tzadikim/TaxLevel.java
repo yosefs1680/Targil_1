@@ -1,6 +1,6 @@
 package Tzadikim;
 
-public enum TaxLevel{
+public enum TaxLevel{// enum for calculating a tax for member
     FIRST ,SECOND, THIRD , FORTH ,FIFTH ,SIXTH ,MAX;
 
     public int levelToTax() {

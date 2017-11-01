@@ -1,9 +1,13 @@
 package Tzadikim;
+/*
+* adir abargil
+* and yosef simhony
+*/
 
 import java.net.SocketTimeoutException;
 import java.util.*;
 
-public class Community {
+public class Community {//class to create all community members and make calculates
     private static List<CommunityMember> communityMembers = new ArrayList<>();
     private static Map<Volunteering, Integer> volunteeringIntegerMap = new HashMap<>();
     private static int count=0;
